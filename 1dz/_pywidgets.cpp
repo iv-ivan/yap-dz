@@ -73,7 +73,7 @@ extern "C" PyObject* py_Widget_SetSize(PyObject* module, PyObject* args)
 {
     long arg1 = PyLong_AsLong(PyTuple_GetItem(args, 0));
     PyObject * arg2 = PyTuple_GetItem(args, 1);
-    PyObject * arg3 = PyTuple_GetItem(args, 1);
+    PyObject * arg3 = PyTuple_GetItem(args, 2);
     int cs2 = PyLong_AsLong(arg2);
     int cs3 = PyLong_AsLong(arg3);
     Widget_SetSize((Widget*)arg1, cs2, cs3);
