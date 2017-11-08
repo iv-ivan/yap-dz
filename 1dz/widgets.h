@@ -34,6 +34,8 @@ struct Application : public Object {
     void clear() override;
     virtual ~Application();
     QApplication* app;
+    char* appName;
+    char** argsPtr;
 };
 
 struct Widget : public Object {

@@ -20,8 +20,8 @@ void MyButton::handleButtonClicked()
     Handle(O);
 }
 
-Application::Application() {name = "Application";}
-void Application::clear() {delete app;}
+Application::Application() {name = "Application"; appName = new char[5]; strcpy(appName, std::string("ivan").c_str()); argsPtr = &appName;}
+void Application::clear() {delete app; delete[] appName;}
 Application::~Application() {}
 Widget::Widget() {name = "Widget";}
 void Widget::clear() {delete widget;}
@@ -38,9 +38,8 @@ PushButton::~PushButton() {}
 
 Application* Application_New() {
     Application* app = new Application;
-    int args = 0;
-    char ** empty_args;
-    app->app = new QApplication(args, empty_args);
+    int args = 1;
+    app->app = new QApplication(args, app->argsPtr);
     return app;
 }
 
